@@ -12,10 +12,6 @@
 import Foundation
 import CoreGraphics
 
-#if !os(OSX)
-    import UIKit
-#endif
-
 @objc(ChartXAxisRenderer)
 open class XAxisRenderer: AxisRendererBase
 {
@@ -172,16 +168,14 @@ open class XAxisRenderer: AxisRendererBase
             let transformer = self.transformer
             else { return }
         
-        #if os(OSX)
         let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        #else
-        let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        #endif
         paraStyle.alignment = .center
         
-        let labelAttrs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: xAxis.labelFont,
-                                                          NSAttributedString.Key.foregroundColor: xAxis.labelTextColor,
-                                                          NSAttributedString.Key.paragraphStyle: paraStyle]
+        let labelAttrs: [NSAttributedString.Key : Any] = [
+            .font: xAxis.labelFont,
+            .foregroundColor: xAxis.labelTextColor,
+            .paragraphStyle: paraStyle
+        ]
         let labelRotationAngleRadians = xAxis.labelRotationAngle.DEG2RAD
         
         let centeringEnabled = xAxis.isCenterAxisLabelsEnabled
