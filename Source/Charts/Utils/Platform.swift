@@ -191,12 +191,12 @@ func NSUIGraphicsEndImageContext()
 
 func NSUIImagePNGRepresentation(_ image: NSUIImage) -> Data?
 {
-    return image.pngData()
+    return UIImagePNGRepresentation(image)
 }
 
 func NSUIImageJPEGRepresentation(_ image: NSUIImage, _ quality: CGFloat = 0.8) -> Data?
 {
-    return image.jpegData(compressionQuality: quality)
+    return UIImageJPEGRepresentation(image, quality)
 }
 
 func NSUIMainScreen() -> NSUIScreen?
