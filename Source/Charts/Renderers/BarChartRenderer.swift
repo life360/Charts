@@ -578,6 +578,16 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                         
                         let val = e.y
                         
+                        let yPos: CGFloat
+                        // Use the rect.maxY to position the label at the bottom of the bar before adding some more Y flavor to its position 🌚
+                        if dataSet.fixedLabelOffset > 0 {
+                            yPos = rect.maxY + dataSet.fixedLabelOffset
+                        } else {
+                            yPos = val >= 0.0
+                                ? (rect.origin.y + posOffset)
+                                : (rect.origin.y + rect.size.height + negOffset)
+                        }
+                        
                         if dataSet.isDrawValuesEnabled
                         {
                             drawValue(
@@ -588,9 +598,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                                     dataSetIndex: dataSetIndex,
                                     viewPortHandler: viewPortHandler),
                                 xPos: x,
-                                yPos: val >= 0.0
-                                    ? (rect.origin.y + posOffset)
-                                    : (rect.origin.y + rect.size.height + negOffset),
+                                yPos: yPos,
                                 font: valueFont,
                                 align: .center,
                                 color: dataSet.valueTextColorAt(j))

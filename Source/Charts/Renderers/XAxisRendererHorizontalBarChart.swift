@@ -117,7 +117,6 @@ open class XAxisRendererHorizontalBarChart: XAxisRenderer
             else { return }
         
         let labelFont = xAxis.labelFont
-        let labelTextColor = xAxis.labelTextColor
         let labelRotationAngleRadians = xAxis.labelRotationAngle.DEG2RAD
         
         let centeringEnabled = xAxis.isCenterAxisLabelsEnabled
@@ -125,8 +124,12 @@ open class XAxisRendererHorizontalBarChart: XAxisRenderer
         // pre allocate to save performance (dont allocate in loop)
         var position = CGPoint(x: 0.0, y: 0.0)
         
+        let labelTextColors: [UIColor]? = xAxis.labelTextColors.count == xAxis.entryCount ? xAxis.labelTextColors : nil
+        
         for i in stride(from: 0, to: xAxis.entryCount, by: 1)
         {
+            let labelTextColor = labelTextColors?[i] ?? xAxis.labelTextColor
+
             // only fill x values
             
             position.x = 0.0

@@ -171,9 +171,6 @@ open class XAxisRenderer: AxisRendererBase
         let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paraStyle.alignment = .center
         
-        let labelAttrs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: xAxis.labelFont,
-            NSAttributedString.Key.foregroundColor: xAxis.labelTextColor,
-            NSAttributedString.Key.paragraphStyle: paraStyle]
         let labelRotationAngleRadians = xAxis.labelRotationAngle.DEG2RAD
         
         let centeringEnabled = xAxis.isCenterAxisLabelsEnabled
@@ -191,8 +188,16 @@ open class XAxisRenderer: AxisRendererBase
         
         let entries = xAxis.entries
         
+        // Make sure that we have the same quantity of colors as entries or else we shoudln't use any values from this busted array
+        let labelTextColors: [UIColor]? = xAxis.labelTextColors.count == entries.count ? xAxis.labelTextColors : nil
+        
         for i in stride(from: 0, to: entries.count, by: 1)
         {
+            let labelTextColor = labelTextColors?[i] ?? xAxis.labelTextColor
+            
+            let labelAttrs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: xAxis.labelFont,
+                                                              NSAttributedString.Key.foregroundColor: labelTextColor,
+                                                              NSAttributedString.Key.paragraphStyle: paraStyle]
             if centeringEnabled
             {
                 position.x = CGFloat(xAxis.centeredEntries[i])
