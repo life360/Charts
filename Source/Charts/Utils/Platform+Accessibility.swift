@@ -4,12 +4,12 @@ import Foundation
 
 internal func accessibilityPostLayoutChangedNotification(withElement element: Any? = nil)
 {
-   UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, element)
+    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: element)
 }
 
 internal func accessibilityPostScreenChangedNotification(withElement element: Any? = nil)
 {
-    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, element)
+    UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: element)
 }
 
 /// A simple abstraction over UIAccessibilityElement and NSAccessibilityElement.
@@ -21,7 +21,7 @@ open class NSUIAccessibilityElement: UIAccessibilityElement
     {
         didSet
         {
-            accessibilityTraits = isHeader ? UIAccessibilityTraitHeader : UIAccessibilityTraitNone
+            accessibilityTraits = isHeader ? UIAccessibilityTraits.header : UIAccessibilityTraits.none
         }
     }
 
@@ -29,7 +29,7 @@ open class NSUIAccessibilityElement: UIAccessibilityElement
         {
         didSet
         {
-            accessibilityTraits = isSelected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
+            accessibilityTraits = isSelected ? UIAccessibilityTraits.selected : UIAccessibilityTraits.none
         }
     }
 
