@@ -108,6 +108,7 @@
 		A692D8BDE42717F69DB790BE /* HorizontalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6021C9E424C36116AEA78CC9 /* HorizontalBarChartView.swift */; };
 		AEE9C4E4AC02B8FB3CD21975 /* ZoomViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A4F5987E58F3E5BE855F9 /* ZoomViewJob.swift */; };
 		AF4AAF3709ED9DDF6362EAE8 /* IBarLineScatterCandleBubbleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5649B272BF3EBFC8A1EF0C1 /* IBarLineScatterCandleBubbleChartDataSet.swift */; };
+		AFEB267B2BB194FC001C9A75 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AFEB267A2BB194FC001C9A75 /* PrivacyInfo.xcprivacy */; };
 		B0D28C68BB9A958DC56EB214 /* DefaultValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8F8163EE54D6D9E916B0 /* DefaultValueFormatter.swift */; };
 		B13C74B4FF705D7B595D01EF /* IAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9DF16AF59680A3BB49452 /* IAxisValueFormatter.swift */; };
 		B539114951455C35BADAE3F3 /* PieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB5E3761EF8B4D1E1E1014 /* PieChartDataSet.swift */; };
@@ -270,6 +271,7 @@
 		A5A75AA73C5AA381DA517959 /* LineChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineChartDataSet.swift; sourceTree = "<group>"; };
 		AA5A16F4A382813C4FE8BDF9 /* YAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererRadarChart.swift; path = Source/Charts/Renderers/YAxisRendererRadarChart.swift; sourceTree = "<group>"; };
 		AA70259ED16FF80D8EEB0F94 /* ChevronUpShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronUpShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift; sourceTree = "<group>"; };
+		AFEB267A2BB194FC001C9A75 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Source/Charts/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		B137428B41C143D5115726C4 /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = Source/Charts/Components/Description.swift; sourceTree = "<group>"; };
 		B1BA6B21CBDF77A15848994F /* RadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift; sourceTree = "<group>"; };
 		B44829AF0ADA583F1F0279B7 /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		2647844720BC6574A544A337 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				AFEB267A2BB194FC001C9A75 /* PrivacyInfo.xcprivacy */,
 				A49C1F0F9CCD6E5C143C29F4 /* Animation */,
 				8C531E3F3C3DE5843C93C3DA /* Charts */,
 				51EF1986C9884C25EED1C2CB /* Components */,
@@ -776,6 +779,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEB267B2BB194FC001C9A75 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
