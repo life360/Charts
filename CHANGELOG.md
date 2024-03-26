@@ -1,5 +1,8 @@
 # Change Log
 
+## [v4.0.1] Include privacy manifest
+- Include privacy manifest (https://github.com/life360/Charts/pull/5)
+
 ## [v3.2.2](https://github.com/danielgindi/Charts/tree/v3.2.2) (2019-02-13)
 [Full Changelog](https://github.com/danielgindi/Charts/compare/v3.2.1...v3.2.2)
 
